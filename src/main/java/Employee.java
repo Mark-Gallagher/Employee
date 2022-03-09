@@ -2,7 +2,7 @@ public class Employee {
 
     private String title;
     private String name;
-    private String ppsid;
+    private String pps;
     private String phone;
     private String employmentType;
     private int age;
@@ -10,7 +10,7 @@ public class Employee {
     public Employee(String title, String name, String pps, String phone, String employmentType, int age) {
         this.title = title;
         this.name = name;
-        this.ppsid= pps;
+        this.pps= pps;
         this.phone = phone;
         this.employmentType = employmentType;
         this.age = age;
@@ -48,7 +48,6 @@ public class Employee {
     }
 
     public String getPps() {
-        if(pps)
         return pps;
     }
 
