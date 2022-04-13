@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmployeeTest {
 
-
-
     @Test
     @DisplayName("TestTitle")
     public void test_getTitle () {
@@ -14,7 +12,7 @@ public class EmployeeTest {
         assertEquals("Mr", emp.getTitle());
     }
     @Test
-    @DisplayName("TestTitle")
+    @DisplayName("TestName")
     public void test_getName() {
         Employee emp = new Employee();
         assertEquals("Brian", emp.getName());
