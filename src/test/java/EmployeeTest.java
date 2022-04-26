@@ -5,18 +5,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmployeeTest {
 
+    private Employee emp;
+
+    @BeforeEach
+    public void employeeCstr(){
+        emp = new Employee("Mr","Brian Walsh");
+    }
+
     @Test
     @DisplayName("TestTitle")
     public void test_getTitle () {
-        Employee emp = new Employee();
         assertEquals("Mr", emp.getTitle());
     }
     @Test
     @DisplayName("TestName")
     public void test_getName() {
-        Employee emp = new Employee();
         assertEquals("Brian", emp.getName());
     }
+
+
+
 
 
 
