@@ -30,7 +30,7 @@ public class Employee {
             return name;
         }
         else{
-            String message = "Invalid title entered!";
+            String message = "Invalid name entered!";
             throw new IllegalArgumentException(message);
         }
 
