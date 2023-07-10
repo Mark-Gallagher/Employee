@@ -16,12 +16,19 @@ public class Employee  {
        setProfession(profession);
     }
 
+   
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name.length() >= 3 && name.length() <= 24){
+            this.name = name;
+        }
+        else{
+            String message = "Invalid name entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public String getId() {
@@ -29,7 +36,13 @@ public class Employee  {
     }
 
     public void setId(String id) {
-        this.id = id;
+        if(id.length() >= 3 && id.length() <= 6){
+            this.id = id;
+        }
+        else{
+            String message = "Invalid id entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public Integer getAge() {
