@@ -50,7 +50,12 @@ public class Employee  {
     }
 
     public void setAge(Integer age) {
-        this.age = age;
+        if(age >= 18 && age <= 40){
+            this.age = age;
+        }else{
+            String message = "Invalid age entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public String getAddress() {
@@ -58,7 +63,12 @@ public class Employee  {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        if(Character.isUpperCase(address.charAt(0)) && address.length() >= 4){
+            this.address = address;
+        }else{
+            String message = "Invalid address entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public double getSalary() {
