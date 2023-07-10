@@ -16,6 +16,7 @@ public class Employee  {
        setProfession(profession);
     }
 
+   
     public String getName() {
         return name;
     }
@@ -55,7 +56,6 @@ public class Employee  {
             String message = "Invalid age entered!";
             throw new IllegalArgumentException(message);
         }
-
     }
 
     public String getAddress() {
@@ -69,7 +69,6 @@ public class Employee  {
             String message = "Invalid address entered!";
             throw new IllegalArgumentException(message);
         }
-
     }
 
     public double getSalary() {
