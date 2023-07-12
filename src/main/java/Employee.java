@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 public class Employee  {
 
     private String name;
@@ -23,8 +25,7 @@ public class Employee  {
     public void setName(String name) {
         if(name.length() >= 3 && name.length() <= 24){
             this.name = name;
-        }
-        else{
+        } else{
             String message = "Invalid name entered!";
             throw new IllegalArgumentException(message);
         }
@@ -37,8 +38,7 @@ public class Employee  {
     public void setId(String id) {
         if(id.length() >= 3 && id.length() <= 6){
             this.id = id;
-        }
-        else{
+        } else{
             String message = "Invalid id entered!";
             throw new IllegalArgumentException(message);
         }
@@ -51,11 +51,10 @@ public class Employee  {
     public void setAge(Integer age) {
         if(age >= 18 && age <= 40){
             this.age = age;
-        }else{
+        } else{
             String message = "Invalid age entered!";
             throw new IllegalArgumentException(message);
         }
-
     }
 
     public String getAddress() {
@@ -65,11 +64,10 @@ public class Employee  {
     public void setAddress(String address) {
         if(Character.isUpperCase(address.charAt(0)) && address.length() >= 4){
             this.address = address;
-        }else{
+        } else{
             String message = "Invalid address entered!";
             throw new IllegalArgumentException(message);
         }
-
     }
 
     public double getSalary() {
@@ -77,15 +75,25 @@ public class Employee  {
     }
 
     public void setSalary(double salary) {
-        this.salary = salary;
+        if(salary >= 30000 && salary <= 80000){
+            this.salary = salary;
+        } else{
+            String message = "Invalid salary entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public String getProfession() {
         return profession;
     }
 
-    public void setProfession(String profession) {
-        this.profession = profession;
+    public void setProfession(@NotNull String profession) {
+        if (!profession.isBlank()) {
+            this.profession = profession;
+        } else {
+            String message = "Invalid profession entered!";
+            throw new IllegalArgumentException(message);
+        }
     }
 
     @Override

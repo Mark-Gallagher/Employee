@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LabTest</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">public class Employee  {
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LabTest</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">import org.jetbrains.annotations.NotNull;
+
+public class Employee  {
 
     private String name;
     private String id;
@@ -7,38 +9,36 @@
     private double salary;
     private String profession;
 
-<span class="fc" id="L10">    public Employee(String name, String id, Integer age, String address, double salary,String profession) {</span>
-<span class="fc" id="L11">       setName(name);</span>
-<span class="fc" id="L12">       setId(id);</span>
-<span class="fc" id="L13">       setAge(age);</span>
-<span class="fc" id="L14">       setAddress(address);</span>
-<span class="fc" id="L15">       setSalary(salary);</span>
-<span class="fc" id="L16">       setProfession(profession);</span>
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L12">    public Employee(String name, String id, Integer age, String address, double salary,String profession) {</span>
+<span class="fc" id="L13">       setName(name);</span>
+<span class="fc" id="L14">       setId(id);</span>
+<span class="fc" id="L15">       setAge(age);</span>
+<span class="fc" id="L16">       setAddress(address);</span>
+<span class="fc" id="L17">       setSalary(salary);</span>
+<span class="fc" id="L18">       setProfession(profession);</span>
+<span class="fc" id="L19">    }</span>
 
     public String getName() {
-<span class="fc" id="L20">        return name;</span>
+<span class="fc" id="L22">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="pc bpc" id="L24" title="1 of 4 branches missed.">        if(name.length() &gt;= 3 &amp;&amp; name.length() &lt;= 24){</span>
-<span class="fc" id="L25">            this.name = name;</span>
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        if(name.length() &gt;= 3 &amp;&amp; name.length() &lt;= 24){</span>
+<span class="fc" id="L27">            this.name = name;</span>
+        } else{
+<span class="fc" id="L29">            String message = &quot;Invalid name entered!&quot;;</span>
+<span class="fc" id="L30">            throw new IllegalArgumentException(message);</span>
         }
-        else{
-<span class="fc" id="L28">            String message = &quot;Invalid name entered!&quot;;</span>
-<span class="fc" id="L29">            throw new IllegalArgumentException(message);</span>
-        }
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L32">    }</span>
 
     public String getId() {
-<span class="fc" id="L34">        return id;</span>
+<span class="fc" id="L35">        return id;</span>
     }
 
     public void setId(String id) {
-<span class="pc bpc" id="L38" title="1 of 4 branches missed.">        if(id.length() &gt;= 3 &amp;&amp; id.length() &lt;= 6){</span>
-<span class="fc" id="L39">            this.id = id;</span>
-        }
-        else{
+<span class="pc bpc" id="L39" title="1 of 4 branches missed.">        if(id.length() &gt;= 3 &amp;&amp; id.length() &lt;= 6){</span>
+<span class="fc" id="L40">            this.id = id;</span>
+        } else{
 <span class="fc" id="L42">            String message = &quot;Invalid id entered!&quot;;</span>
 <span class="fc" id="L43">            throw new IllegalArgumentException(message);</span>
         }
@@ -51,46 +51,54 @@
     public void setAge(Integer age) {
 <span class="pc bpc" id="L52" title="1 of 4 branches missed.">        if(age &gt;= 18 &amp;&amp; age &lt;= 40){</span>
 <span class="fc" id="L53">            this.age = age;</span>
-        }else{
+        } else{
 <span class="fc" id="L55">            String message = &quot;Invalid age entered!&quot;;</span>
 <span class="fc" id="L56">            throw new IllegalArgumentException(message);</span>
         }
-
-<span class="fc" id="L59">    }</span>
+<span class="fc" id="L58">    }</span>
 
     public String getAddress() {
-<span class="fc" id="L62">        return address;</span>
+<span class="fc" id="L61">        return address;</span>
     }
 
     public void setAddress(String address) {
-<span class="pc bpc" id="L66" title="1 of 4 branches missed.">        if(Character.isUpperCase(address.charAt(0)) &amp;&amp; address.length() &gt;= 4){</span>
-<span class="fc" id="L67">            this.address = address;</span>
-        }else{
-<span class="fc" id="L69">            String message = &quot;Invalid address entered!&quot;;</span>
-<span class="fc" id="L70">            throw new IllegalArgumentException(message);</span>
+<span class="pc bpc" id="L65" title="1 of 4 branches missed.">        if(Character.isUpperCase(address.charAt(0)) &amp;&amp; address.length() &gt;= 4){</span>
+<span class="fc" id="L66">            this.address = address;</span>
+        } else{
+<span class="fc" id="L68">            String message = &quot;Invalid address entered!&quot;;</span>
+<span class="fc" id="L69">            throw new IllegalArgumentException(message);</span>
         }
-
-<span class="fc" id="L73">    }</span>
+<span class="fc" id="L71">    }</span>
 
     public double getSalary() {
-<span class="nc" id="L76">        return salary;</span>
+<span class="fc" id="L74">        return salary;</span>
     }
 
     public void setSalary(double salary) {
-<span class="fc" id="L80">        this.salary = salary;</span>
-<span class="fc" id="L81">    }</span>
+<span class="pc bpc" id="L78" title="1 of 4 branches missed.">        if(salary &gt;= 30000 &amp;&amp; salary &lt;= 80000){</span>
+<span class="fc" id="L79">            this.salary = salary;</span>
+        } else{
+<span class="fc" id="L81">            String message = &quot;Invalid salary entered!&quot;;</span>
+<span class="fc" id="L82">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L84">    }</span>
 
     public String getProfession() {
-<span class="nc" id="L84">        return profession;</span>
+<span class="fc" id="L87">        return profession;</span>
     }
 
-    public void setProfession(String profession) {
-<span class="fc" id="L88">        this.profession = profession;</span>
-<span class="fc" id="L89">    }</span>
+    public void setProfession(@NotNull String profession) {
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (!profession.isBlank()) {</span>
+<span class="fc" id="L92">            this.profession = profession;</span>
+        } else {
+<span class="fc" id="L94">            String message = &quot;Invalid profession entered!&quot;;</span>
+<span class="fc" id="L95">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L97">    }</span>
 
     @Override
     public String toString() {
-<span class="nc" id="L93">        return &quot;Employee{&quot; +</span>
+<span class="fc" id="L101">        return &quot;Employee{&quot; +</span>
                 &quot;name='&quot; + name + '\'' +
                 &quot;, id='&quot; + id + '\'' +
                 &quot;, age=&quot; + age +

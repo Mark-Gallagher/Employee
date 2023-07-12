@@ -38,6 +38,31 @@ public class EmployeeTest {
     }
 
     @Test
+    @DisplayName("Test Salary")
+    public void testSalary(){
+        assertEquals(60000.00, emp.getSalary());
+    }
+    @Test
+    @DisplayName("Test Profession")
+    public void testProfession(){
+        assertEquals("Construction Worker",emp.getProfession());
+    }
+
+    @Test
+    @DisplayName("Test toString")
+    public void testToString(){
+        assertEquals(
+                "Employee{" +
+                        "name='" + emp.getName() + '\'' +
+                        ", id='" + emp.getId() + '\'' +
+                        ", age=" + emp.getAge() +
+                        ", address='" + emp.getAddress() + '\'' +
+                        ", salary=" + emp.getSalary() +
+                        ", profession='" + emp.getProfession() + '\'' +
+                        '}', emp.toString());
+    }
+
+    @Test
     void testConstructorInvalidName(){
         final String invalid_Title = "Invalid name entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Employee("BBrriiaann--WWaallsshheeyy","412550",38,"Kerry",60000.00, "Construction Worker"));
@@ -63,5 +88,19 @@ public class EmployeeTest {
         final String invalid_Address = "Invalid address entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Employee("Brian Walsh","412550",38,"ker",60000.00, "Construction Worker"));
         assertEquals(invalid_Address, exception.getMessage());
+    }
+
+    @Test
+    void testConstructorInvalidSalary(){
+        final String invalid_Salary = "Invalid salary entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Employee("Brian Walsh","412550",38,"Kerry",20000.00, "Construction Worker"));
+        assertEquals(invalid_Salary, exception.getMessage());
+    }
+
+    @Test
+    void testConstructorInvalidProfession(){
+        final String invalid_Profession = "Invalid profession entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Employee("Brian Walsh","412550",38,"Kerry",60000.00, ""));
+        assertEquals(invalid_Profession,exception.getMessage());
     }
 }
